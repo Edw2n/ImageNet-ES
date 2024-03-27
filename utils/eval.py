@@ -24,7 +24,7 @@ class Evaluator_ES():
         Path(f'{self.result_dir}').mkdir(parents=True, exist_ok=True)
         
         if args.init != 'n':
-            evaluator.init_datasets()
+            self.init_datasets()
         
         self.set_data_info(data_root_dir, args)
 
