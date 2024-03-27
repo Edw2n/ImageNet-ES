@@ -10,7 +10,7 @@
 - reesnet18 : https://drive.google.com/file/d/1L4S4hFRXF7S35wh3RfJOvsz-kZ__qxPJ/view?usp=share_link
 
 ## Get Started
-### 1. Configurations
+### 0. Configurations
 - In configs/user_configs.py, fill your path informations of directory and files of imagenet-ES datasets and models
 ```
 IMAGENET_ES_ROOT_DIR = 'path/to/root-dir/of/imagenet-es'
@@ -26,7 +26,7 @@ EN_PT = "path/to/efficientnet_model_weight/file"
 conda create -n ies python=3.10
 conda activate ies
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-cd cvpr7880/
+cd ImageNet-ES/
 pip install -r requirements.txt
 ```
 
@@ -39,8 +39,9 @@ python get_label_lists.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -bs ${BATCH
 
 #### 2.2 Run OOD Evaluator
 ```
-python ood_exp.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -id_name ${ID_NAME} -output_dir ./results
+python ood_exp.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -id_name ${ID_NAME} -output_dir ./results -init {YES_OR_NO}
 ```
+* If first run of the ood evaluator, set {YES_OR_NO} as "y".
 
 #### 2.3 Available Options
 * Available options of "MODLE_NAME" can be refereced by key of timm_config in configs/models/model_config.py.
