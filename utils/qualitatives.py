@@ -167,10 +167,10 @@ class QualCanvas(Interest):
         targets = [
             pc_l1[self.top5_l1[b1:b1+1]],
             pc_l1[self.bot5_l1[w1:w1+1]],
-            ae_l1[:5],
+            ae_l1[0:1],
             pc_l5[self.top5_l5[b5:b5+1]],
             pc_l5[self.bot5_l5[w5:w5+1]],
-            ae_l5[:5],
+            ae_l5[0:1],
         ]
         
         ROOT_DIR = f'{self.dataset_dir}/{self.target_dir}/{self.sample_dir_map[self.target_dir]}'
