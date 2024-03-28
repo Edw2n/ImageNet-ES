@@ -1,4 +1,5 @@
-from ..user_configs import SWIN_PT, RESNET18_PT, EN_PT
+from ..user_configs import SWIN_PT, RESNET18_PT, EN_PT, RESNET50_PT, VIT_PT
+
 RN18_kwargs = {
     'model_type': 'timm',
     'arch': 'resnet18.a1_in1k',
@@ -29,8 +30,30 @@ EN_kwargs = {
     'fv_out_name': 'global_pool',
 }
 
+RN50_kwargs = {
+    'model_type': 'timm',
+    'arch': 'resnet50.a1_in1k',
+    'resume_path': RESNET50_PT,
+    'fv_name': 'fc',
+    'fv_out': 200,
+    'fv_in': 2048,
+    'fv_out_name': 'global_pool',
+}
+
+VIT_kwargs = {
+    'model_type': 'timm',
+    'arch': 'deit_base_patch16_224.fb_in1k',
+    'resume_path': VIT_PT,
+    'fv_name': 'head',
+    'fv_out': 200,
+    'fv_in': 768,
+    'fv_out_name': 'head_drop',
+}
+
 KWARGS_MAP = {
     'resnet18': RN18_kwargs,
     'swin': SWIN_kwargs,
     'en': EN_kwargs,
+    'resnet50': RN50_kwargs,
+    'vit': VIT_kwargs,
 }

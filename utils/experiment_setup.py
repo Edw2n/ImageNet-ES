@@ -46,6 +46,7 @@ def oodexp_setup(args):
 def load_model(model_name, device_num):
     # if no problem, load model and return model else return None (exit() please)
     model = None
+    model_kwargs = None
     try:
         model_kwargs = KWARGS_MAP[model_name]
         device = f"cuda:{device_num}" if ch.cuda.is_available() else "cpu"

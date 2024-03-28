@@ -18,11 +18,11 @@ if __name__ == '__main__':
     device_num = cuda_setup(args.gpu_num)
     model_name = args.model
     model, model_kwargs = load_model(model_name, device_num)
-    device, = list(set(p.device for p in model.parameters()))
     
     if not model:
         exit()
         
+    device, = list(set(p.device for p in model.parameters()))    
     model_config = timm_config[model_name]
     cfg = model_config['CFG']
 
