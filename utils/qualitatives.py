@@ -43,8 +43,8 @@ class QualCanvas(Interest):
         # indices
         self.top5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['BEST5_SETTING']]
         self.top5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['BEST5_SETTING']]
-        self.bot5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['WOSRT5_SETTING']]
-        self.bot5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['WOSRT5_SETTING']]
+        self.bot5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['WORST5_SETTING']]
+        self.bot5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['WORST5_SETTING']]
         
         def to_avg_acc(target_settings, env, target_df=self.accs_pc_df):
             targets = target_df[target_df['Light']==env]
