@@ -26,6 +26,7 @@ class Interest():
             'WORST5_SETTING': list(TARGETS.nsmallest(5,'Acc.')['Camera Parameter'])[:5],
             'AUTO5_SETTING': list(map(lambda i: f'param_{i}', range(1,5+1))),
         }
+        print(interest_settings)
         return interest_settings 
 
 class QualCanvas(Interest):
@@ -42,8 +43,8 @@ class QualCanvas(Interest):
         # indices
         self.top5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['BEST5_SETTING']]
         self.top5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['BEST5_SETTING']]
-        self.bot5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['BEST5_SETTING']]
-        self.bot5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['BEST5_SETTING']]
+        self.bot5_l1 = [int(setting_name.split('_')[-1]) for setting_name in l1_interests['WOSRT5_SETTING']]
+        self.bot5_l5 = [int(setting_name.split('_')[-1]) for setting_name in l5_interests['WOSRT5_SETTING']]
         
         def to_avg_acc(target_settings, env, target_df=self.accs_pc_df):
             targets = target_df[target_df['Light']==env]
@@ -159,7 +160,7 @@ class QualCanvas(Interest):
     def get_quals(self, path, picked):
         b1, w1, b5, w5 = picked
         pc_l1 = self.load_imgs(path,'pc_l1')
-        pc_l2 = self.load_imgs(path,'pc_l5')
+        pc_l5 = self.load_imgs(path,'pc_l5')
         ae_l1 = self.load_imgs(path,'ae_l1')
         ae_l5 = self.load_imgs(path,'ae_l5')
         
@@ -167,8 +168,8 @@ class QualCanvas(Interest):
             pc_l1[self.top5_l1[b1:b1+1]],
             pc_l1[self.bot5_l1[w1:w1+1]],
             ae_l1[:5],
-            pc_l2[self.top5_l5[b5:b5+1]],
-            pc_l2[self.top5_l5[w5:w5+1]],
+            pc_l5[self.top5_l5[b5:b5+1]],
+            pc_l5[self.bot5_l5[w5:w5+1]],
             ae_l5[:5],
         ]
         
