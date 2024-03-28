@@ -32,6 +32,11 @@ pip install -r requirements.txt
 
 ### 2. Run scripts
 
+#### 2.0 Run scripts for openood datasets download (only once):
+```
+sh utils/download.sh
+```
+
 #### 2.1 Run Labeler: adopt ImageNet-ES to [openood](https://github.com/Jingkang50/OpenOOD) evaluation api.
 ```
 python get_label_lists.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -bs ${BATCH_SIZE}
@@ -39,9 +44,8 @@ python get_label_lists.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -bs ${BATCH
 
 #### 2.2 Run OOD Evaluator
 ```
-python ood_exp.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -id_name ${ID_NAME} -output_dir ./results -init {YES_OR_NO}
+python ood_exp.py -model ${MODEL_NAME} -gpu_num {DEVICE_NUM} -id_name ${ID_NAME} -output_dir {OUTPUT_DIR_NAME}
 ```
-* If first run of the ood evaluator, set {YES_OR_NO} as "y".
 
 #### 2.3 Available Options
 * Available options of "MODLE_NAME" can be refereced by key of timm_config in configs/models/model_config.py.
