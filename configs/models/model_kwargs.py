@@ -44,6 +44,5 @@ KWARGS_MAP = {
     'resnet18': RN18_kwargs,
     'swin': SWIN_kwargs,
     'en': EN_kwargs,
-    'resnet50': RN50_kwargs,
     'vit': VIT_kwargs,
 }
