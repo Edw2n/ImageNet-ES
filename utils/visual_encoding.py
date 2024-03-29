@@ -65,7 +65,7 @@ S_OOD_CATEGORY = {
 NF_MARKER = {
     'msp': '*',
     'odin': '*',
-    'react': 'x',
+    'react': '*',
     'vim': 'x',
     'knn': 'x',
     'ash': 'x',

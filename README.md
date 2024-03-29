@@ -17,6 +17,7 @@ IMAGENET_ES_ROOT_DIR = 'path/to/root-dir/of/imagenet-es'
 SWIN_PT = "path/to/swin_model_weights/file"
 RESNET18_PT = 'path/to/resnet18_model_weight/file'
 EN_PT = "path/to/efficientnet_model_weight/file"
+VIT_PT = "path/to/vit_model_weight/file"
 ```
 
 ### 1. Environment Settings
