@@ -39,7 +39,7 @@ class Scatters():
         self.put_legend(plt, legend_dict)
 
         if file_name:
-            plt.savefig(file_name)
+            plt.savefig(file_name, dpi=300)
 
         plt.show()
 
@@ -124,7 +124,7 @@ class Scatters():
         self.put_legend(plt, legend_dict)
 
         if file_name:
-            plt.savefig(file_name)
+            plt.savefig(file_name, dpi=300)
         plt.show()
     
     def put_legend(self, target, legend_dict):

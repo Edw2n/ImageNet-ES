@@ -74,7 +74,7 @@ class Histogram():
             plt.tight_layout()
         
         if file_name:
-            plt.savefig(file_name)
+            plt.savefig(file_name, dpi=300)
         plt.show()
         
 
@@ -129,6 +129,6 @@ class Histogram():
             plt.tight_layout()
         
         if file_name:
-            plt.savefig(file_name)
+            plt.savefig(file_name, dpi=300)
         plt.show()
 
