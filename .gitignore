@@ -199,4 +199,4 @@ data/
 configs/user_configs.py
 
 # except results files
-results/
+results*/
