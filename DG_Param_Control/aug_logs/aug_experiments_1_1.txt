@@ -474,3 +474,97 @@ ImageNet:  summary   Acc@1 51.225
 ----------Imagenet-ES validation----------
 ImageNet:  summary   Acc@1 54.648
 *** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.22533416748047, 54.64814758300781
+**************************************************
+
+Training starts... Experiments:1, Use AS data:True
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.800
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.847
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 51.431
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.8466682434082, 51.431480407714844
+===== Epoch 1 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.000
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.833
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 50.426
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.83333206176758, 50.425926208496094
+===== Epoch 2 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.600
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.620
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 51.874
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.619998931884766, 51.87407302856445
+===== Epoch 3 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.400
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.452
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 52.552
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.45199966430664, 52.551849365234375
+===== Epoch 4 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.400
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.313
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 53.170
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.313331604003906, 53.17036819458008
+===== Epoch 5 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.800
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.201
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 53.594
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.201332092285156, 53.594444274902344
+===== Epoch 6 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.300
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.124
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 54.237
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.124000549316406, 54.237037658691406
+===== Epoch 7 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.300
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.116
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 54.520
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.11600112915039, 54.52037048339844
+===== Epoch 8 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.400
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.192
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 54.578
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.19200134277344, 54.57777786254883
+===== Epoch 9 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 84.500
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.225
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 54.648
+*** Best accuracy (Im, Im-C, Im-AS): 85.80000305175781, 51.22533416748047, 54.64814758300781
