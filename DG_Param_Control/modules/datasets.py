@@ -306,16 +306,6 @@ def get_train_dataset(data_root, exp_settings=0, use_es_training=False):
         lpips_val = pd.read_csv(os.path.join(BASE_PATH, 'lpips', 'lpips_val_byparams.csv'))
         filtered_params = lpips_val[lpips_val['lpips'] < LPIPS_THRESHOLD]['param']
         valid_params = [parse_lpips(p) for p in filtered_params]
-        
-        
-        # remove_params_l1 = [3,4,8,19,20,29,36,45,46,57,61,62,63,64] # LPIPS above 0.8 
-        # remove_params_l5 = [3,4,13,20,29,30,41,45,46,47,57,58,61,62,63,64] # LPIPS above 0.8 
-        # remove_params = [(1, i) for i in remove_params_l1] + [(5, i) for i in remove_params_l5]
-        # # remove_params = [2,3,6,12,16,21,25,26] # LPIPS above 0.8 
-        # # remove_params = [25] # LPIPS above 1.0 
-        # # remove_params = [1,2,3,6,7,11,12,15,16,20,21,25,26] # LPIPS above 0.6
-        # all_params = [(l, i) for l in [1,5] for i in range(1,1+NUM_PARAMS_VAL)]
-        # valid_params2 = list(set(all_params) - set(remove_params))
         replace_dict = {'ILSVRC12/val':[f'ImageNet-ES/es-val/param_control/l{i}/param_{j}' for i, j in valid_params]}
     
 
