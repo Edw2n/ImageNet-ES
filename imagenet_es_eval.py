@@ -28,10 +28,10 @@ import pickle
 import numpy as np
 import timm
 
-from modules.datasets import dataset_path, get_dataset
-from modules.pretrained_models import get_pretrained_models
-from utils import log_string, count_parameters, parse_acc_imagenet_c, parse_acc_imagenet_es, collect_features
-from modules.validate import validate
+from utils.dg_param_controls.modules.datasets import dataset_path, get_dataset
+from utils.dg_param_controls.modules.pretrained_models import get_pretrained_models
+from utils.dg_param_controls.utils_dg import log_string, count_parameters, parse_acc_imagenet_c, parse_acc_imagenet_es, collect_features
+from utils.dg_param_controls.modules.validate import validate
 
 
 model_names = sorted(name for name in models.__dict__
@@ -91,7 +91,7 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
                          'multi node data parallel training')
 parser.add_argument('--dummy', action='store_true', help="use fake data to benchmark")
 
-parser.add_argument('--data_root', default='/home/datasets', type=str,
+parser.add_argument('--data_root', default='~/datasets', type=str,
                     help='Datset root directory')
 parser.add_argument('--dataset', default='imagenet', type=str,
                     help='Validation dataset name')

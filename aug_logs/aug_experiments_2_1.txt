@@ -1,0 +1,11 @@
+**************************************************
+
+Training starts... Experiments:2, Use AS data:True
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.600
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.372
+----------Imagenet-ES validation----------

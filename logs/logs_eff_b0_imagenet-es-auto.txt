@@ -1,0 +1,6 @@
+Starting evaluation of imagenet-es-auto
+==========Starting validation of imagenet-es-auto__eff_b0__l1__param_1==========
+imagenet-es-auto__eff_b0__l1__param_1:  summary   Acc@1 53.400
+==========Starting validation of imagenet-es-auto__eff_b0__l1__param_2==========
+imagenet-es-auto__eff_b0__l1__param_2:  summary   Acc@1 53.800
+==========Starting validation of imagenet-es-auto__eff_b0__l1__param_3==========

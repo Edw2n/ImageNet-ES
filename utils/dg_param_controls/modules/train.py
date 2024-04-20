@@ -10,7 +10,7 @@ CURR_PATH = os.path.dirname(os.path.abspath(__file__))
 BASE_PATH = os.path.dirname(CURR_PATH)
 
 sys.path.append(BASE_PATH)
-from utils import save_checkpoint, Summary, AverageMeter, ProgressMeter, accuracy
+from utils_dg import save_checkpoint, Summary, AverageMeter, ProgressMeter, accuracy
 from metadata.indices_in_1k import indices_dict
 
 
