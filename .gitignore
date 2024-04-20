@@ -200,3 +200,13 @@ configs/user_configs.py
 
 # except results files
 results*/
+
+# except results files
+CAE
+EDSR
+utils/dg_param_controls/ckpt/*
+utils/dg_param_controls/ckpt
+*.ipyng_checkpoints*
+*__pycache__*
+utils/dg_param_controls/pretrained
+utils/dg_param_controls/logs
