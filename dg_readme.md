@@ -18,7 +18,7 @@ We use ImageNet, ImageNet-C and ImageNet-ES for evaluation. Please prepare the d
 - ImageNet-ES: `ImageNet-ES`
 
 ### Domain generalization techniques (Table 2)
-Please use following command to run the experiments proposed in Table 2. We used a single GPU to train, and using ```CUDA_VISIBLE_DEVICES=[GPU no.]``` is recommended.
+Please use following command to run the experiments proposed in Table 2. We used a single GPU to train, and using `CUDA_VISIBLE_DEVICES=[GPU no.]` is recommended.
 ```
 CUDA_VISIBLE_DEVICES=0 python augment_analysis.py --data_root [DATASET DIRECTORY] -a resnet50 --seed [SEED] --epochs [NUM_EPOCHS] -b [BATCH_SIZE] --exp-settings [EXPERIMENT SETTING] --use-es-training (Optional)
 ```
@@ -40,11 +40,11 @@ CUDA_VISIBLE_DEVICES=0 python augment_analysis.py --data_root [DATASET DIRECTORY
 - Please refer to `aug_analysis.sh` file for the commands used for experiments.
 
 
-- Note that to use DeepAugment, you need to prepare the distorted datasets as described in [ImageNet-R repository](https://github.com/hendrycks/imagenet-r). The created dataset should be stored in `CAE` and `EDSR` directories.
+- Note that to use DeepAugment, you need to prepare the distorted datasets as described in [ImageNet-R repository](https://github.com/hendrycks/imagenet-r). The created dataset should be stored in `CAE` and `EDSR` directories under `data_root`.
 
 
 ### Evaluation of various models on ImageNet-ES (Table 3)
-Please use following command to run the experiment proposed in Table 2. We used a single GPU for evaluation, and using ```CUDA_VISIBLE_DEVICES=[GPU no.]``` is recommended.
+Please use following command to run the experiment proposed in Table 2. We used a single GPU for evaluation, and using `CUDA_VISIBLE_DEVICES=[GPU no.]` is recommended.
 ```
 CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BATCH_SIZE] --pretrained --dataset [EVALUATION DATASET] --log_file [LOG FILE NAME]
 ```
