@@ -1,4 +1,4 @@
-import os
+import os, sys
 import timm
 import torch
 import torchvision.models as models
@@ -7,7 +7,9 @@ import torch.nn as nn
 CURR_PATH = os.path.dirname(os.path.abspath(__file__))
 BASE_PATH = os.path.dirname(CURR_PATH)
 
-from configs.config import TIMM_MODELS, TORCH_MODELS
+sys.path.append(BASE_PATH)
+
+from configs.datasets import TIMM_MODELS, TORCH_MODELS
 
 
 def get_pretrained_models(is_timm, arch):

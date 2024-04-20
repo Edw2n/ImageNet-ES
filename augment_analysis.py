@@ -23,14 +23,14 @@ import torchvision.datasets as datasets
 import torchvision.models as models
 import torch.nn.functional as F
 
-from modules.custom_datasets import DatasetFolder_withpath
+from utils.dg_param_controls.modules.custom_datasets import DatasetFolder_withpath
 from torchvision.datasets.folder import default_loader
 import pickle
 
-from modules.datasets import dataset_path, get_dataset, get_train_dataset
-from utils import log_string, count_parameters, save_checkpoint
-from modules.train import train
-from modules.validate import validate
+from utils.dg_param_controls.modules.datasets import dataset_path, get_dataset, get_train_dataset
+from utils.dg_param_controls.utils_dg import log_string, count_parameters, save_checkpoint
+from utils.dg_param_controls.modules.train import train
+from utils.dg_param_controls.modules.validate import validate
 
 model_names = sorted(name for name in models.__dict__
     if name.islower() and not name.startswith("__")
@@ -95,7 +95,7 @@ parser.add_argument('--exp-settings', default=0, type=int, help='Experiment sett
                                                 1: Colorjitter + PhotometricDistortion,\
                                                 2: AugMix & DeepAugment')
 parser.add_argument('--use-es-training', action='store_true', help='Use as data for training')
-parser.add_argument('--data_root', default='/home/datasets', type=str,
+parser.add_argument('--data_root', default='~/datasets', type=str,
                     help='Datset root directory')
 
 
@@ -254,7 +254,7 @@ def main_worker(gpu, ngpus_per_node, args):
         num_workers=args.workers, pin_memory=True, sampler=train_sampler)
 
 
-    #### Validation datasets: ImageNet, ImageNet-C, ImageNet-AS
+    #### Validation datasets: ImageNet, ImageNet-C, ImageNet-ES
     im_dict = get_dataset('imagenet-tin', args.data_root, args.arch)
     im_c_dict = get_dataset('imagenet-c-tin', args.data_root, args.arch)
     im_es_dict = get_dataset('imagenet-es', args.data_root, args.arch)
@@ -318,7 +318,7 @@ def main_worker(gpu, ngpus_per_node, args):
         is_best = acc1 > best_acc1
         best_acc1 = max(acc1, best_acc1)
         best_acc1_c, best_acc1_es = acc1_c, acc1_es
-        log_string(LOG_FOUT, f'*** Best accuracy (Im, Im-C, Im-AS): {best_acc1}, {best_acc1_c}, {best_acc1_es}')
+        log_string(LOG_FOUT, f'*** Best accuracy (Im, Im-C, Im-ES): {best_acc1}, {best_acc1_c}, {best_acc1_es}')
 
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):

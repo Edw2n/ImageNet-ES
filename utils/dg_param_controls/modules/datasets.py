@@ -1,4 +1,4 @@
-import os
+import os, sys
 import pickle
 import torch
 import torchvision.transforms as transforms
@@ -7,14 +7,16 @@ import numpy as np
 import re
 import pandas as pd
 
+CURR_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = os.path.dirname(CURR_PATH)
+
+sys.path.append(BASE_PATH)
+
 from modules.custom_datasets import DatasetFolder_withpath
 from torchvision.datasets.folder import default_loader
 from PIL import ImageOps, Image
 
-CURR_PATH = os.path.dirname(os.path.abspath(__file__))
-BASE_PATH = os.path.dirname(CURR_PATH)
-
-from configs.config import DATASET_SUBPATH, LIGHT_OPTIONS, NUM_PARAMS_VAL, NUM_PARAMS_TEST, NUM_PARAMS_AUTO, LPIPS_THRESHOLD
+from configs.datasets import DATASET_SUBPATH, OPS_NUM, ENVS, NUM_PARAMS_AUTO, LPIPS_THRESHOLD
 
 IMG_EXTENSIONS = (".jpg", ".jpeg", ".png", ".ppm", ".bmp", ".pgm", ".tif", ".tiff", ".webp")
 
@@ -128,8 +130,8 @@ def get_dataset(dataset_name, data_root, arch):
 
     elif dataset_name in ['imagenet-es','imagenet-es-auto']:
         param_sets = []
-        light = LIGHT_OPTIONS
-        num_params = NUM_PARAMS_TEST if dataset_name == 'imagenet-es' else NUM_PARAMS_AUTO
+        light = ENVS['es-test']
+        num_params = OPS_NUM['es-test'] if dataset_name == 'imagenet-es' else NUM_PARAMS_AUTO
 
         for i in range(1,1+num_params):            
             param_sets.append(f'param_{i}')
@@ -321,14 +323,14 @@ def get_train_dataset(data_root, exp_settings=0, use_es_training=False):
     if exp_settings == 2:
         # Add distorted images
         edsr_dataset = DatasetFolder_withpath(
-            os.path.join(BASE_PATH,'EDSR'),
+            os.path.join(data_root,'EDSR'),
             loader=default_loader,
             cls_filter=cls_filter,
             fname_filter=fname_filter_val,
             transform=train_transform)
 
         cae_dataset = DatasetFolder_withpath(
-            os.path.join(BASE_PATH,'CAE'),
+            os.path.join(data_root,'CAE'),
             loader=default_loader,
             cls_filter=cls_filter,
             fname_filter=fname_filter_val,

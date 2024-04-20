@@ -18,9 +18,9 @@ We use ImageNet, ImageNet-C and ImageNet-ES for evaluation. Please prepare the d
 - ImageNet-ES: `ImageNet-ES`
 
 ### Domain generalization techniques (Table 2)
-Please use following command to run the experiments proposed in Table 2.
+Please use following command to run the experiments proposed in Table 2. We used a single GPU to train, and using ```CUDA_VISIBLE_DEVICES=[GPU no.]``` is recommended.
 ```
-python augment_analysis.py --data_root [DATASET DIRECTORY] -a resnet50 --seed [SEED] --epochs [NUM_EPOCHS] -b [BATCH_SIZE] --exp-settings [EXPERIMENT SETTING] --use-es-training (Optional)
+CUDA_VISIBLE_DEVICES=0 python augment_analysis.py --data_root [DATASET DIRECTORY] -a resnet50 --seed [SEED] --epochs [NUM_EPOCHS] -b [BATCH_SIZE] --exp-settings [EXPERIMENT SETTING] --use-es-training (Optional)
 ```
 - Description of `exp-settings` argument:
     - 0 for compositional augmentation only (RandomCrop, RandomResize, RandomFlip)
@@ -44,9 +44,9 @@ python augment_analysis.py --data_root [DATASET DIRECTORY] -a resnet50 --seed [S
 
 
 ### Evaluation of various models on ImageNet-ES (Table 3)
-Please use following command to run the experiment proposed in Table 2.
+Please use following command to run the experiment proposed in Table 2. We used a single GPU for evaluation, and using ```CUDA_VISIBLE_DEVICES=[GPU no.]``` is recommended.
 ```
-python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BATCH_SIZE] --pretrained --dataset [EVALUATION DATASET] --log_file [LOG FILE NAME]
+CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BATCH_SIZE] --pretrained --dataset [EVALUATION DATASET] --log_file [LOG FILE NAME]
 ```
 - Available model architecture (`-a` argument):
     - `eff_b0`: EfficientNet-B0
