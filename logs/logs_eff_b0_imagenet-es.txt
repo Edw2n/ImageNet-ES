@@ -1,4 +1,0 @@
-Starting evaluation of imagenet-es
-==========Starting validation of imagenet-es__eff_b0__l1__param_1==========
-imagenet-es__eff_b0__l1__param_1:  summary   Acc@1 67.600
-==========Starting validation of imagenet-es__eff_b0__l1__param_2==========
