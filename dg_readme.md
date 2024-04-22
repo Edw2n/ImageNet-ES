@@ -66,10 +66,10 @@ CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BA
     - `imagenet-es`: ImageNet-ES, Manual parameter settings
     - `imagenet-es-auto`: ImageNet-ES, Auto exposure settings
 - Other arguments:
-    - b: Batch size used in the evaluation
-    - pretrained: Use pretrained model weights downloaded from PyTorch (If you use --timm flag, the model weights downloaded from timm are used.)
-    - timm: Use timm pretrained weights
-    - log_file: The name of log file. The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
+    - `b`: Batch size used in the evaluation
+    - `pretrained`: Use pretrained model weights downloaded from PyTorch (If you use --timm flag, the model weights downloaded from timm are used.)
+    - `timm`: Use timm pretrained weights
+    - `log_file`: The name of log file. The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
 
 - The experimental results (ImageNet-ES test accuracy) are stored in `results` directory under folllowing name: `{model architecture}_{dataset}.csv`
 
