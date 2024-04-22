@@ -39,6 +39,7 @@ CUDA_VISIBLE_DEVICES=0 python augment_analysis.py --data_root [DATASET DIRECTORY
 
 - Please refer to `aug_analysis.sh` file for the commands used for experiments.
 
+- All necessary datasets should be located in `data_root`: ImageNet, ImageNet-ES, ImageNet-C and CAE/EDSR(explained below).
 
 - Note that to use DeepAugment, you need to prepare the distorted datasets as described in [ImageNet-R repository](https://github.com/hendrycks/imagenet-r). The created dataset should be stored in `CAE` and `EDSR` directories under `data_root`.
 
@@ -64,8 +65,11 @@ CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BA
     - `imagenet-tin`: Subset of tiny that matches ImageNet-ES
     - `imagenet-es`: ImageNet-ES, Manual parameter settings
     - `imagenet-es-auto`: ImageNet-ES, Auto exposure settings
-
-- The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
+- Other arguments:
+    - b: Batch size used in the evaluation
+    - pretrained: Use pretrained model weights downloaded from PyTorch (If you use --timm flag, the model weights downloaded from timm are used.)
+    - timm: Use timm pretrained weights
+    - log_file: The name of log file. The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
 
 - The experimental results (ImageNet-ES test accuracy) are stored in `results` directory under folllowing name: `{model architecture}_{dataset}.csv`
 
