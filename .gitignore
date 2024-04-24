@@ -210,3 +210,6 @@ utils/dg_param_controls/ckpt
 *__pycache__*
 utils/dg_param_controls/pretrained
 utils/dg_param_controls/logs
+*aug_logs*
+*logs*
+*ckpt*
