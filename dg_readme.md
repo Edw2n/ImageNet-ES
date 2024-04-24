@@ -78,7 +78,7 @@ CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BA
 ### Jupter Notebook
 To help the researchers who are interested in our work to visualzie the experimental results, we provide the jupyter notebook.
 
-The notebook file is located in notebooks directory: [file link](https://github.com/Edw2n/ImageNet-ES/blob/main/DG_Param_Control/notebooks/Results_summary.ipynb).
+The notebook file is located in notebooks directory: [file link](https://github.com/Edw2n/ImageNet-ES/blob/main/dg_and_sensor_control_summary.ipynb).
 
 
 
