@@ -1,0 +1,80 @@
+**************************************************
+
+Training starts... Experiments:0, Use AS data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.500
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.199
+----------Imagenet-ES validation----------
+**************************************************
+
+Training starts... Experiments:0, Use AS data:False
+
+===== Epoch 0 =====
+
+**************************************************
+
+Training starts... Experiments:0, Use AS data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.500
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.192
+----------Imagenet-ES validation----------
+ImageNet:  summary   Acc@1 50.207
+*** Best accuracy (Im, Im-C, Im-ES): 85.50000762939453, 51.19200134277344, 50.20740509033203
+===== Epoch 1 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.700
+----------Imagenet-C validation----------
+ImageNet:  summary   Acc@1 51.176
+----------Imagenet-ES validation----------
+**************************************************
+
+Training starts... Experiments:0, Use AS data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 85.500
+----------Imagenet-C validation----------
+**************************************************
+
+Training starts... Experiments:0, Use ES data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 86.300
+----------Imagenet-C validation----------
+**************************************************
+
+Training starts... Experiments:0, Use ES data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+**************************************************
+
+Training starts... Experiments:0, Use ES data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 86.300
+----------Imagenet-C validation----------
+**************************************************
+
+Training starts... Experiments:0, Use ES data:False
+
+===== Epoch 0 =====
+
+----------Imagenet validation----------
+ImageNet:  summary   Acc@1 86.300
+----------Imagenet-C validation----------

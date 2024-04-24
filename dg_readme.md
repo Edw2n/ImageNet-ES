@@ -53,7 +53,7 @@ CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BA
     - `eff_b0`: EfficientNet-B0
     - `eff_b3`: EfficientNet-B3
     - `res50`: ResNet-50
-    - `res50_aug`: ResNet-50 trained with DeepAugment and AugMix (Need to download from [ImageNet-R repository](https://github.com/hendrycks/imagenet-r))
+    - `res50_aug`: ResNet-50 trained with DeepAugment and AugMix (Need to download from [ImageNet-R repository](https://github.com/hendrycks/imagenet-r) and locate it under `utils/dg_param_controls/pretrained`)
     - `res152`: ResNet-152
     - `swin_t`: SwinV2 Tiny
     - `swin_s`: SwinV2 Small

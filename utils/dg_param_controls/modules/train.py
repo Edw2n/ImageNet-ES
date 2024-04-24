@@ -39,7 +39,7 @@ def train(train_loader, model, criterion, optimizer, scheduler, epoch, args, log
             x_mix1, x_orig, x_mix2 = images
             bx = torch.cat((x_mix1, x_orig, x_mix2), 0).cuda(args.gpu, non_blocking=True)
         else:
-            bx = images
+            bx = images.cuda(args.gpu)
         by = target.cuda(args.gpu, non_blocking=True)
         
         index_filter = indices_dict['imagenet-tin']

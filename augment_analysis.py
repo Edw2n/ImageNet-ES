@@ -44,7 +44,7 @@ parser.add_argument('-a', '--arch', metavar='ARCH', default='resnet50',
                     help='model architecture: ' +
                         ' | '.join(model_names) +
                         ' (default: resnet50)')
-parser.add_argument('-j', '--workers', default=60, type=int, metavar='N',
+parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 parser.add_argument('--epochs', default=30, type=int, metavar='N',
                     help='number of total epochs to run')
@@ -104,10 +104,10 @@ args = parser.parse_args()
 
 best_acc1, best_acc1_c, best_acc1_es = 0, 0, 0
 os.makedirs('aug_logs', exist_ok=True)
-os.makedirs('results', exist_ok=True)
+os.makedirs('results_dg_param_control', exist_ok=True)
 log_file = f'aug_logs/aug_experiments_{args.exp_settings}_{int(args.use_es_training)}.txt'
 LOG_FOUT = open(log_file, 'a+')
-result_file = f'results/aug_experiments.txt'
+result_file = f'results_dg_param_control/aug_experiments.txt'
 if not os.path.exists(result_file):
     RESULT_FOUT = open(result_file, 'a+')
     RESULT_FOUT.write('Id,Augmentations,Use-ES-data,ImageNet val., ImageNet-C val., ImageNet-ES val.\n')
@@ -293,7 +293,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
 
     log_string(LOG_FOUT, f'*'*50 + '\n')
-    log_string(LOG_FOUT, f'Training starts... Experiments:{args.exp_settings}, Use AS data:{args.use_es_training}\n')
+    log_string(LOG_FOUT, f'Training starts... Experiments:{args.exp_settings}, Use ES data:{args.use_es_training}\n')
 
     for epoch in range(args.start_epoch, args.epochs):
         log_string(LOG_FOUT, f'===== Epoch {epoch} =====\n')
@@ -301,7 +301,7 @@ def main_worker(gpu, ngpus_per_node, args):
             train_sampler.set_epoch(epoch)
 
         # train for one epoch
-        train(train_loader, model, criterion, optimizer, scheduler, epoch, args, LOG_FOUT)
+        # train(train_loader, model, criterion, optimizer, scheduler, epoch, args, LOG_FOUT)
 
         # evaluate on validation set
         log_string(LOG_FOUT, '-'*10 + 'Imagenet validation' + '-'*10)
