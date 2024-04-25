@@ -91,7 +91,7 @@ Please following steps to produce the experimental results for 5.1 OOD Detection
     - The experimental results will be saved in {OUTPUT_DIR_NAME}/{MODEL_ARCHITECTURE_NAME} directory under following name: 'TIN2-{ID_NAME}_{OOD-PROCESSOR}_scores.pt' and 'TIN2-{ID_NAME}_{OOD-PROCESSOR}_results.pt'.
 
 - [Step 6] Plot and analyze the results from Step 5 using following Notebooks
-    * ood_plots.ipynb: Analysis for ood experiments
+    * [ood_plots.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/ood_plots.ipynb): Analysis for ood experiments
 
 - [Available Options for Step 4 and Step 5]
     * Available options of "MODLE_NAME" can be referenced by key of timm_config in configs/models/model_config.py.
@@ -132,7 +132,7 @@ Please following steps to produce the experimental results for 5.2 Domain Genera
     - Note that to use DeepAugment, you need to prepare the distorted datasets as described in [ImageNet-R repository](https://github.com/hendrycks/imagenet-r). The created dataset should be stored in `CAE` and `EDSR` directories under `data_root`.
 
 - [Step 2] Identify and analyze the results from step 1 using following Notebook.
-    - Will be updated
+    * [dg_and_sensor_control_summary.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/dg_and_sensor_control_summary.ipynb)
 
 ### Sensor Paramter Control
 Please following steps to produce the experimental results for 5.3 Sensor Paramter Control in the main paper and related parts in the appendix.
