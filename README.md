@@ -56,14 +56,14 @@ Please prepare the datasets as following in the same directory.
     - You need to prepare the distorted datasets as described in [ImageNet-R repository](https://github.com/hendrycks/imagenet-r)
 
 ### OOD Detection 
-Please following steps to produce the experimental results for 5.1 OOD Detection in the main paper and related parts in the appendix.
-- [Step 1] Please prepare following pretrained models with Tiny-ImageNet.
+Please follow below steps to produce the experimental results for 5.1 OOD Detection in the main paper and related parts in the appendix.
+- [Step 1] Please prepare the following pretrained models with Tiny-ImageNet.
     - Swin : https://drive.google.com/file/d/1DKFkDSfC5s6XxvL8Bk8GWhOzsEiCiyd5/view?usp=drive_link
     - EfficientNet : https://drive.google.com/file/d/1YBBZJAcMPps8WB7bIgY6ssFWpkP27IGk/view?usp=drive_link
     - Resnet18 : https://drive.google.com/file/d/1WSrk_8SboeSh61a0_Kv4vgAKpUaI-Dm1/view?usp=drive_link
     - ViT : https://drive.google.com/file/d/1fj3Y8FvazE7mYRunDU2rc6QtndnyGbBz/view?usp=drive_link
 
-- [Step 2] In configs/user_configs.py, please update path informations of pretrained models and ImageNet-ES directory.
+- [Step 2] In configs/user_configs.py, please update the path information of pretrained models and ImageNet-ES directory.
     ```
     IMAGENET_ES_ROOT_DIR = 'path/to/root-dir/of/imagenet-es'
     SWIN_PT = "path/to/swin_model_weights/file"
@@ -71,7 +71,7 @@ Please following steps to produce the experimental results for 5.1 OOD Detection
     EN_PT = "path/to/efficientnet_model_weight/file"
     VIT_PT = "path/to/vit_model_weight/file"
     ```
-- [Step 3] Run scripts for openood datasets download (only once):
+- [Step 3] Run scripts to download openood datasets (only once):
     ```
     sh utils/download.sh
     ```
@@ -90,7 +90,7 @@ Please following steps to produce the experimental results for 5.1 OOD Detection
         ```
     - The experimental results will be saved in {OUTPUT_DIR_NAME}/{MODEL_ARCHITECTURE_NAME} directory under following name: 'TIN2-{ID_NAME}_{OOD-PROCESSOR}_scores.pt' and 'TIN2-{ID_NAME}_{OOD-PROCESSOR}_results.pt'.
 
-- [Step 6] Plot and analyze the results from Step 5 using following Notebooks
+- [Step 6] Plot and analyze the results from Step 5 using the following Notebooks
     * [ood_plots.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/ood_plots.ipynb): Analysis for ood experiments
 
 - [Available Options for Step 4 and Step 5]
@@ -102,9 +102,9 @@ Please following steps to produce the experimental results for 5.1 OOD Detection
     * Reference get_labeler_args and get_evalood_args in utils/experiment_setup.py for more options and details.
 
 ### Domain generalization techniques
-Please following steps to produce the experimental results for 5.2 Domain Generalization in the main paper and related parts in the appendix.
+Please follow below steps to produce the experimental results for 5.2 Domain Generalization in the main paper and related parts in the appendix.
 
-- [Step 1] Please use following command to run the experiments proposed in Table 2. We used a single GPU to train, and using `CUDA_VISIBLE_DEVICES=[GPU no.]` is recommended.
+- [Step 1] Please use the following command to run the experiments proposed in Table 2. We used a single GPU to train, and it is recommended to use `CUDA_VISIBLE_DEVICES=[GPU no.]`.
     
     ```
     CUDA_VISIBLE_DEVICES=0 python augment_analysis.py --data_root [DATASET DIRECTORY] -a resnet50 --seed [SEED] --epochs [NUM_EPOCHS] -b [BATCH_SIZE] --exp-settings [EXPERIMENT SETTING] --use-es-training (Optional)
@@ -135,17 +135,17 @@ Please following steps to produce the experimental results for 5.2 Domain Genera
     * [dg_and_sensor_control_summary.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/dg_and_sensor_control_summary.ipynb)
 
 ### Sensor Paramter Control
-Please following steps to produce the experimental results for 5.3 Sensor Paramter Control in the main paper and related parts in the appendix.
+Please follow below steps to produce the experimental results for 5.3 Sensor Paramter Control in the main paper and related parts in the appendix.
 
 
 - [Step 1] Evaluation of various models on ImageNet-ES (Table 3)
     
-    Please use following command to run the experiment proposed in Table 2. We used a single GPU for evaluation, and using `CUDA_VISIBLE_DEVICES=[GPU no.]` is recommended.
+    Please use the following command to run the experiments proposed in Table 2. We used a single GPU for evaluation, and it is recommended to sue `CUDA_VISIBLE_DEVICES=[GPU no.]`.
     
     ```
     CUDA_VISIBLE_DEVICES=0 python imagenet_as_eval.py -a [MODEL ARCHITECTURE] -b [BATCH_SIZE] --pretrained --dataset [EVALUATION DATASET] --log_file [LOG FILE NAME]
     ```
-    - Available model architecture (`-a` argument):
+    - Available model architectures (`-a` argument):
         - `eff_b0`: EfficientNet-B0
         - `eff_b3`: EfficientNet-B3
         - `res50`: ResNet-50
@@ -157,7 +157,7 @@ Please following steps to produce the experimental results for 5.3 Sensor Paramt
         - `dinov2_b`: DINOv2 Base
         - `dinov2`: DINOv2 Giant    
 
-    - Available dataset (`--dataset` argument):
+    - Available datasets (`--dataset` argument):
         - `imagenet-tin`: Subset of tiny that matches ImageNet-ES
         - `imagenet-es`: ImageNet-ES, Manual parameter settings
         - `imagenet-es-auto`: ImageNet-ES, Auto exposure settings
@@ -165,14 +165,14 @@ Please following steps to produce the experimental results for 5.3 Sensor Paramt
         - `b`: Batch size used in the evaluation
         - `pretrained`: Use pretrained model weights downloaded from PyTorch (If you use --timm flag, the model weights downloaded from timm are used.)
         - `timm`: Use timm pretrained weights
-        - `log_file`: The name of log file. The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
+        - `log_file`: The name of the log file. The logs are stored in `logs` directory under the following name: `logs_{model architecture}_{dataset}.txt`
 
     - The experimental results (ImageNet-ES test accuracy) are stored in `results` directory under folllowing name: `{model architecture}_{dataset}.csv`
 
     - Please refer to `eval_scripts.sh` file for the commands used for experiments.
-- [Step 2] Identify and analyze the results from step 1 using following Notebook.
+- [Step 2] Identify and analyze the results from step 1 using the following Notebook.
     * [dg_and_sensor_control_summary.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/dg_and_sensor_control_summary.ipynb)
-- [Step 3] Explore direction of sensor control using following notebook
+- [Step 3] Explore direction of sensor control using the following notebook
     * [qualitative-analysis.ipynb](https://github.com/Edw2n/ImageNet-ES/blob/main/qualitative-analysis.ipynb)
     * Section 5.3.2 in the main paper and related parts in the appendix
 
