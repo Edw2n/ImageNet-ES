@@ -1,7 +1,7 @@
 # Unexplored Faces of Robustness and Out-of-Distribution:  Covariate Shifts in Environment and Sensor Domains (CVPR 2024)
 
 ## ImageNet-ES 
- In contrast to conventional robustness benchmarks that rely on digital perturbations, we directly capture **202k images** by using a real camera in a controllable testbed. **The dataset presents a wide range of covariate shifts caused by variations in light and camera sensor factors.**
+ In contrast to conventional robustness benchmarks that rely on digital perturbations, we directly capture **202k images** by using a real camera in a controllable testbed. **The dataset presents a wide range of covariate shifts caused by variations in light and camera sensor factors.** [[pdf]](https://arxiv.org/abs/2404.15882)
  
  [Download ImageNet-ES here](https://drive.google.com/file/d/1ZCsc4tw_aRNzWii8ahvKV97z3V3xzMDA/view?usp=sharing)
 <img align="center" src="supples/ImageNet-ES.jpg" width="800">
