@@ -177,4 +177,12 @@ Please follow below steps to produce the experimental results for 5.3 Sensor Par
     * Section 5.3.2 in the main paper and related parts in the appendix
 
 ### Citations
-* To be updated soon
+```bibtex
+@InProceedings{Baek_2024_CVPR,
+    author    = {Baek, Eunsu and Park, Keondo and Kim, Jiyoon and Kim, Hyung-Sin},
+    title     = {Unexplored Faces of Robustness and Out-of-Distribution: Covariate Shifts in Environment and Sensor Domains},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {22294--22303}
+}
