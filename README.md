@@ -3,7 +3,7 @@
 ## ImageNet-ES 
  In contrast to conventional robustness benchmarks that rely on digital perturbations, we directly capture **202k images** by using a real camera in a controllable testbed. **The dataset presents a wide range of covariate shifts caused by variations in light and camera sensor factors.** [[pdf]](https://openaccess.thecvf.com/content/CVPR2024/html/Baek_Unexplored_Faces_of_Robustness_and_Out-of-Distribution_Covariate_Shifts_in_Environment_CVPR_2024_paper.html)
  
- [Download ImageNet-ES here](https://drive.google.com/file/d/1ZCsc4tw_aRNzWii8ahvKV97z3V3xzMDA/view?usp=sharing)
+[Download ImageNet-ES here](https://huggingface.co/datasets/edw2n/ImageNet-ES)
 <img align="center" src="supples/ImageNet-ES.jpg" width="800">
 
 ### ImageNet-ES strucuture
@@ -22,6 +22,12 @@ ImageNet-ES
     └── sampled_tin_no_resize2 # reference samples (1K)
 ```
 The main paper and the appendix explain more details about dataset specification.
+
+### 🖥️ Download from terminal
+To download the dataset directly from your terminal using **`wget`:**
+```bash
+wget https://huggingface.co/datasets/Edw2n/ImageNet-ES/resolve/main/ImageNet-ES.zip
+```
 
 ## ES-Studio
 To compensate the missing perturbations in current robustness benchmarks, we construct a new testbed, **ES-Studio** (**E**nvironment and camera **S**ensor perturbation **Studio**). It can control physical light and camera sensor parameters during data collection. 
